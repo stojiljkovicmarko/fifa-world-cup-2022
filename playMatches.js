@@ -71,11 +71,13 @@ const playEliminationPhase = (
   displayEliminationRound(gamesToBePlayed);
 
   if (pairsForEliminationPhase.length === 2) {
-    winner = playMatch(
-      pairsForEliminationPhase[0],
-      pairsForEliminationPhase[1],
-      true
-    );
+    do {
+      winner = playMatch(
+        pairsForEliminationPhase[0],
+        pairsForEliminationPhase[1],
+        true
+      );
+    } while (!winner);
     console.log();
     console.log(`Winner:
       !!!  ${winner.name}  !!!`);
